@@ -101,11 +101,12 @@ flask --version
 home.html berada di folder templates
 
 style.css di static/css
+
 web.js di static/js
 
 2. Jalankan Flask
 ```text
-python py.py
+python app.py
 ```
 
 atau
