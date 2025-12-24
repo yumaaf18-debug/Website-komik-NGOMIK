@@ -1,0 +1,313 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>NGOMIK</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!--CSS UTAMA-->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <button id="homeBtn" class="active">Home</button>
+        <button id="bookmarkBtn">Bookmark</button>
+        <button id="historyBtn">History</button>
+    </nav>
+
+    <!--INPUT SEARCH -->
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search comic..." />
+    </div>
+
+    <!--INPUT SEARCH -->
+    <div class="profile" id="profileBtn">
+        <svg width="22" height="22" viewBox="0 0 24 24">
+            <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v1.2h19.2v-1.2c0-3.2-6.4-4.8-9.6-4.8z"/>
+        </svg>
+    </div>
+</header>
+
+<!-- MENU PROFIL -->
+<div class="profile-menu" id="profileMenu">
+    <div id="openAccount">Account</div>
+    <div id="logoutBtn">Logout</div>
+</div>
+
+<!-- PANEL ACCOUNT -->
+<div class="account-panel" id="accountPanel">
+    <div class="acc-pic">
+        <svg width="35" height="35" viewBox="0 0 24 24">
+            <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v1.2h19.2v-1.2c0-3.2-6.4-4.8-9.6-4.8z"/>
+        </svg>
+    </div>
+
+    <!--OUTPUT EMAIL USER-->
+    <div class="info-box" id="emailInfoBox">
+        <strong>Email</strong>
+        **********@gmail.com
+    </div>
+<!--OUTPUT PASSWORD-->
+    <div class="info-box">
+        <strong>Password</strong>
+        **********
+    </div>
+
+    <button class="change-btn" id="changeBtn">Change</button>
+</div>
+
+<!-- Filter Options -->
+<div class="filter-container" id="filterContainer">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="comedy">Comedy</button>
+    <button class="filter-btn" data-filter="fantasy">Fantasy</button>
+    <button class="filter-btn" data-filter="horror">Horror</button>
+    <button class="filter-btn" data-filter="Sport">Sport</button>
+    <button class="filter-btn" data-filter="thriller">Thriller</button>
+    <button class="filter-btn" data-filter="slice of life">Slice of Life</button>
+    <button class="filter-btn" data-filter="action">Action</button>
+</div>
+
+<h2>Featured Stories</h2>
+<div class="cards" id="featuredCards">
+    <div class="card" data-id="1" data-mirror="https://softkomik.com/one-piece-bahasa-indonesia" 
+     data-title="One Piece" data-genre="comedy">
+        <div class="thumb">
+            <img src="/static/gambar/one_piece.jpg" alt="">
+        </div>
+        <div class="bookmark-icon" data-id="1">
+            <i class="far fa-bookmark"></i>
+        </div>
+        <div class="content">
+            <strong>One Piece</strong><br>Comedy
+            <div class="rating">⭐⭐⭐⭐⭐</div>
+        </div>
+    </div>
+
+    <div class="card" data-id="2" data-mirror="https://softkomik.com/kamen-rider-913-kaixa-bahasa-indonesia"
+    data-title="Kamen Rider" data-genre="fantasy">
+        <div class="thumb">
+            <img src="/static/gambar/kamen_rider.jpg" alt="">
+        </div>
+        <div class="bookmark-icon" data-id="2">
+            <i class="far fa-bookmark"></i>
+        </div>
+        <div class="content">
+            <strong>Kamen Rider</strong><br>Fantasy
+            <div class="rating">⭐⭐⭐⭐</div>
+        </div>
+    </div>
+
+    <div class="card" data-id="3" data-mirror="https://softkomik.com/blue-lock-bahasa-indonesia"
+    data-title="Blue Lock" data-genre="Sport">
+        <div class="thumb">
+            <img src="/static/gambar/bl.jpeg" alt="">
+        </div>
+        <div class="bookmark-icon" data-id="3">
+            <i class="far fa-bookmark"></i>
+        </div>
+        <div class="content">
+            <strong>Blue Lock</strong><br>Sport
+            <div class="rating">⭐</div>
+        </div>
+    </div>
+
+    <div class="card" data-id="4" data-mirror="https://softkomik.com/rooster-fighter-bahasa-indonesia"
+    data-title="Rooster Fighter" data-genre="Action">
+        <div class="thumb">
+            <img src="/static/gambar/ayam.jpg" alt="">
+        </div>
+        <div class="bookmark-icon" data-id="4">
+            <i class="far fa-bookmark"></i>
+        </div>
+        <div class="content">
+            <strong>Rooster Fighter</strong><br>Action
+            <div class="rating">⭐⭐⭐</div>
+        </div>
+    </div>
+</div>
+
+<h2>Other Stories</h2>
+<div class="cards" id="otherCards">
+    <div class="card" data-id="5" data-mirror="https://softkomik.com/one-punchman-murata-yusuke-bahasa-indonesia"
+    data-title="One Punch Man" data-genre="Thriller">
+        <div class="thumb">
+            <img src="/static/gambar/opm.jpg" alt="">
+        </div>
+        <div class="bookmark-icon" data-id="5">
+            <i class="far fa-bookmark"></i>
+        </div>
+        <div class="content">
+            <strong>One Punch Man</strong><br>Thriller
+            <div class="rating">⭐⭐⭐⭐</div>
+        </div>
+    </div>
+
+    <div class="card" data-id="6" data-mirror="https://softkomik.com/solo-leveling-bahasa-indonesia"
+    data-title="Solo Leveling" data-genre="slice of life">
+        <div class="thumb">
+            <img src="/static/gambar/solo_leveling.jpg" alt="">
+        </div>
+        <div class="bookmark-icon" data-id="6">
+            <i class="far fa-bookmark"></i>
+        </div>
+        <div class="content">
+            <strong>Solo Leveling</strong><br>Slice of Life
+            <div class="rating">⭐⭐⭐⭐⭐</div>
+        </div>
+    </div>
+
+    <div class="card" data-id="7" data-mirror="https://softkomik.com/dragon-ball-super-bahasa-indonesia"
+    data-title="Dragon Ball" data-genre="action">
+        <div class="thumb">
+            <img src="/static/gambar/db.jpg" alt="">
+        </div>
+        <div class="bookmark-icon" data-id="7">
+            <i class="far fa-bookmark"></i>
+        </div>
+        <div class="content">
+            <strong>Dragon ball</strong><br>Action
+            <div class="rating">⭐⭐⭐</div>
+        </div>
+    </div>
+</div>
+
+<!-- Toast Notification -->
+<div class="toast" id="toast"></div>
+
+<!-- Modal for Change Account Info -->
+<div class="modal" id="changeModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 class="modal-title">Change Account Information</h3>
+            <button class="close-modal" id="closeModal">&times;</button>
+        </div>
+        <div class="form-group">
+            <label for="emailInput">Email</label>
+            <input type="email" id="emailInput" value="riskaameliiaputri@gmail.com">
+        </div>
+        <div class="form-group">
+            <label for="passwordInput">New Password</label>
+            <input type="password" id="passwordInput" placeholder="Enter new password">
+        </div>
+        <div class="form-group">
+            <label for="confirmPasswordInput">Confirm Password</label>
+            <input type="password" id="confirmPasswordInput" placeholder="Confirm new password">
+        </div>
+        <div class="form-actions">
+            <button class="btn btn-secondary" id="cancelBtn">Cancel</button>
+            <button class="btn btn-primary" id="saveBtn">Save Changes</button>
+        </div>
+    </div>
+</div>
+
+<!-- Login/Register Modal -->
+<div class="modal" id="authModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 class="modal-title">Welcome to Web Comic</h3>
+            <button class="close-modal" id="closeAuthModal">&times;</button>
+        </div>
+        <div class="auth-container">
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-tab="login">Login</button>
+                <button class="auth-tab" data-tab="register">Register</button>
+            </div>
+            
+            <div class="auth-content active" id="loginContent">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" placeholder="Enter your password">
+                </div>
+                <div class="form-actions">
+                    <button class="btn btn-primary" id="loginBtn">Login</button>
+                </div>
+            </div>
+            
+            <div class="auth-content" id="registerContent">
+                <div class="form-group">
+                    <label for="registerName">Name</label>
+                    <input type="text" id="registerName" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">Email</label>
+                    <input type="email" id="registerEmail" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Password</label>
+                    <input type="password" id="registerPassword" placeholder="Enter your password">
+                </div>
+                <div class="form-group">
+                    <label for="confirmRegisterPassword">Confirm Password</label>
+                    <input type="password" id="confirmRegisterPassword" placeholder="Confirm your password">
+                </div>
+                <div class="form-actions">
+                    <button class="btn btn-primary" id="registerBtn">Register</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Comic Reader -->
+<div class="comic-reader" id="comicReader">
+    <div class="reader-header">
+        <div class="reader-title" id="readerTitle">Comic Title</div>
+        <div class="reader-controls">
+            <button class="reader-btn" id="bookmarkReaderBtn">
+                <i class="far fa-bookmark"></i>
+            </button>
+            <button class="reader-btn" id="closeReaderBtn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+    <div class="reader-content">
+        <img class="comic-page" id="comicPage" src="" alt="Comic Page">
+    </div>
+    <div class="reader-footer">
+        <div class="page-nav">
+            <button class="page-btn" id="prevPageBtn">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <span class="page-info" id="pageInfo">Page 1 of 10</span>
+            <button class="page-btn" id="nextPageBtn">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- MIRROR READER (PORT BARU) -->
+<div class="mirror-reader" id="mirrorReader" style="
+    display:none;
+    position:fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    background:#000;
+    z-index:700;
+    flex-direction:column;
+">
+    <button style="
+        background:#ff7eb3;
+        color:#fff;
+        padding:12px;
+        font-size:18px;
+        border:none;
+        cursor:pointer;
+        font-weight:600;
+    " onclick="closeMirror()">Kembali</button>
+
+    <iframe id="mirrorFrame" src="" style="width:100%; height:100%; border:none;"></iframe>
+</div>
+<script src="{{ url_for('static', filename='js/web.js') }}"></script>
+</body>
+</html>
