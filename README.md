@@ -45,7 +45,7 @@ project/
 │
 └── README.md
 
-# 📂 Struktur Project
+⚙️ Instalasi Python 
 1. Download Python
 
 Unduh Python dari: https://www.python.org/downloads/
