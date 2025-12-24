@@ -99,14 +99,13 @@ flask --version
 1. Pastikan struktur folder sudah benar
 
 home.html berada di folder templates
-```text
-style.css di static/css
 
+style.css di static/css
 web.js di static/js
-```
+
 2. Jalankan Flask
 ```text
-python app.py
+python py.py
 ```
 
 atau
