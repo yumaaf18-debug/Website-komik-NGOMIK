@@ -8,7 +8,6 @@ Pengguna dapat login, register, mencari komik, memfilter berdasarkan genre, meny
 ## 📌 Fitur Utama
 
 - 🔐 **Login & Register**
-- 👤 **Manajemen akun (email)**
 - ⭐ **Bookmark komik**
 - 🕒 **Riwayat komik (History)**
 - 🔍 **Pencarian komik**
