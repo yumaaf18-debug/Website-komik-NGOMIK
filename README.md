@@ -48,69 +48,78 @@ project/
 ## ⚙️ Instalasi Python
 1. Download Python
 
-Unduh Python dari: ```text https://www.python.org/downloads/ ```
+Unduh Python dari: 
+```text 
+https://www.python.org/downloads/
+```
 
 Saat instalasi centang:
 
-```text ☑ Add Python to PATH ```
+```text
+☑ Add Python to PATH
+```
 
 2. Cek instalasi Python
 
 Buka Command Prompt / Terminal:
 
-```text python --version ```
-
+```text 
+python --version
+```
 
 Jika muncul versi Python, berarti berhasil.
 
-⚙️ Instalasi Flask
+## ⚙️ Instalasi Flask
 1. (Opsional) Buat Virtual Environment
+```text
 python -m venv venv
-
+```
 
 Aktifkan:
 
 Windows:
-
+```text
 venv\Scripts\activate
-
+```
 
 Linux / Mac:
-
+```text
 source venv/bin/activate
-
+```
 2. Install Flask
+```text
 pip install flask
-
+```
 
 Cek Flask:
-
+```text
 flask --version
-
-▶️ Cara Menjalankan Aplikasi
+```
+## ▶️ Cara Menjalankan Aplikasi
 1. Pastikan struktur folder sudah benar
 
 home.html berada di folder templates
-
+```text
 style.css di static/css
 
 web.js di static/js
-
+```
 2. Jalankan Flask
+```text
 python app.py
-
+```
 
 atau
-
+```text
 flask run
-
+```
 3. Buka browser
 
 Akses:
-
+```text
 http://127.0.0.1:5000
-
-🧠 Cara Kerja Web
+```
+## 🧠 Cara Kerja Web
 
 Flask bertugas merender halaman home.html
 
@@ -132,7 +141,7 @@ Search
 
 Data user disimpan di LocalStorage, bukan database
 
-⚠️ Catatan Penting
+## ⚠️ Catatan Penting
 
 Sistem login belum menggunakan database
 
