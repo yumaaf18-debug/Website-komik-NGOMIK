@@ -1,6 +1,6 @@
 # NGOMIK – Web Comic Reader
 
-NGOMIK adalah aplikasi web berbasis **Flask** yang berfungsi sebagai **web pembaca komik**. Dan Web ini menggunakan fitur mirroring
+NGOMIK adalah aplikasi web berbasis **Flask** yang berfungsi sebagai **web pembaca komik**.  
 Pengguna dapat login, register, mencari komik, memfilter berdasarkan genre, menyimpan bookmark, serta melihat riwayat komik yang pernah dibuka.
 
 ---
@@ -44,3 +44,102 @@ project/
 │   └── gambar/              # Asset gambar komik
 │
 └── README.md
+⚙️ Instalasi Python
+1. Download Python
+Unduh Python dari: https://www.python.org/downloads/
+
+Saat instalasi centang:
+
+pgsql
+Copy code
+☑ Add Python to PATH
+2. Cek instalasi Python
+Buka Command Prompt / Terminal:
+
+bash
+Copy code
+python --version
+Jika muncul versi Python, berarti berhasil.
+
+⚙️ Instalasi Flask
+1. (Opsional) Buat Virtual Environment
+bash
+Copy code
+python -m venv venv
+Aktifkan:
+
+Windows:
+
+bash
+Copy code
+venv\Scripts\activate
+Linux / Mac:
+
+bash
+Copy code
+source venv/bin/activate
+2. Install Flask
+bash
+Copy code
+pip install flask
+Cek Flask:
+
+bash
+Copy code
+flask --version
+▶️ Cara Menjalankan Aplikasi
+1. Pastikan struktur folder sudah benar
+home.html berada di folder templates
+
+style.css di static/css
+
+web.js di static/js
+
+2. Jalankan Flask
+bash
+Copy code
+python app.py
+atau
+
+bash
+Copy code
+flask run
+3. Buka browser
+Akses:
+
+cpp
+Copy code
+http://127.0.0.1:5000
+🧠 Cara Kerja Web
+Flask bertugas merender halaman home.html
+
+HTML menampilkan struktur halaman
+
+CSS mengatur tampilan UI
+
+JavaScript (web.js) menangani:
+
+Login & Register
+
+Bookmark
+
+History
+
+Filter genre
+
+Search
+
+Data user disimpan di LocalStorage, bukan database
+
+⚠️ Catatan Penting
+Sistem login belum menggunakan database
+
+Password tidak dienkripsi
+
+Cocok untuk:
+
+Project kuliah
+
+Tugas akhir
+
+Prototype web
